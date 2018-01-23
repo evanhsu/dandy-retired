@@ -1,0 +1,190 @@
+
+one:
+  crew_id: 1
+  firstname: Evan
+  lastname: Hsu
+  cellphone: 541-728-3826
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+
+two:
+  crew_id: 1
+  firstname: Dan
+  lastname: Quinones
+  cellphone: 541-946-3267
+  daysoff: Sun/Mon
+  rappelweight:
+  helitackweight:
+  spotterweight:
+
+three:
+  crew_id: 2
+  firstname: Norm
+  lastname: Sealing
+  cellphone: 
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight: 
+
+four:
+  crew_id: 2
+  firstname: Mary
+  lastname: Cuddy
+  cellphone: 541-350-2115
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+
+five:
+  crew_id: 2
+  firstname: Mike
+  lastname: Dake
+  cellphone: 
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+
+six:
+  crew_id: 2
+  firstname: Jeremy
+  lastname: Gottfried
+  cellphone: 
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+
+seven:
+  crew_id: 1
+  firstname: Sarah
+  lastname: Uvodich
+  cellphone: 612-518-1052
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+
+eight:
+  crew_id: 1
+  firstname: Nick
+  lastname: Sailer
+  cellphone: 760-258-6446
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+nine:
+  crew_id: 1
+  firstname: Justin
+  lastname: Holloway
+  cellphone: 509-680-4974
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+ten:
+  crew_id: 1
+  firstname: Travis
+  lastname: Moore
+  cellphone: 970-270-7514
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+eleven:
+  crew_id: 1
+  firstname: Jenna
+  lastname: Cunningham
+  cellphone: 541-690-9002
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+twelve:
+  crew_id: 1
+  firstname: Nando
+  lastname: Garcia
+  cellphone: 509-680-0952
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+thirteen:
+  crew_id: 1
+  firstname: Andrew
+  lastname: Larrimore
+  cellphone: 307-431-6165
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+fourteen:
+  crew_id: 1
+  firstname: Blaine
+  lastname: Vandehey
+  cellphone: 503-784-4350
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+fifteen:
+  crew_id: 1
+  firstname: Roylynn
+  lastname: Taylor
+  cellphone: 208-859-9648
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+sixteen:
+  crew_id: 1
+  firstname: Charlie
+  lastname: Fabris
+  cellphone: 605-470-0059
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+seventeen:
+  crew_id: 1
+  firstname: Will
+  lastname: McKinney
+  cellphone: 775-219-5136
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight:
+  
+eighteen:
+  crew_id: 1
+  firstname: Kevin
+  lastname: Mayfield
+  cellphone: 360-259-6986
+  daysoff: 
+  rappelweight: 
+  helitackweight: 
+  spotterweight: 
+
+nineteen:
+  crew_id: 1
+  firstname: Tim
+  lastname: Lyda
+  cellphone: 541-761-2676
+  daysoff: 
+  rappelweight: 265
+  helitackweight: 240
+  spotterweight: 215

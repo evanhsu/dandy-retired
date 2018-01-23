@@ -1,0 +1,54 @@
+<%= form_for(@hotel) do |f| %>
+  <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+      <% @hotel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="form_table">
+  <tr>
+    <td>Name:</td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= f.text_field :phone %></td>
+  </tr>
+  <tr>
+    <td>Street 1:</td>
+    <td><%= f.text_field :street1 %></td>
+  </tr>
+  <tr>
+    <td>Street 2:</td>
+    <td><%= f.text_field :street2 %></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><%= f.text_field :city %></td>
+  </tr>
+  <tr>
+    <td>State:</td>
+    <td><%= f.text_field :state %></td>
+  </tr>
+  <tr>
+    <td>Zip:</td>
+    <td><%= f.text_field :zip %></td>
+  </tr>
+  <% if current_user.account_type == "admin" %>
+  <tr>
+    <td>Crew:</td>
+    <td><%= f.collection_select :crew_id, Crew.find(:all), :id, :name %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= f.submit %><%= f.hidden_field :crew_id, {:value => @hotel.crew_id.to_s} unless current_user.account_type == "admin" %></td>
+  </tr>
+</table>
+<% end %>

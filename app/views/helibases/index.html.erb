@@ -1,0 +1,38 @@
+<h1>Listing helibases</h1>
+
+<table class="alternating_rows">
+  <tr>
+    <th>Crew</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Main phone</th>
+    <th>Base manager name</th>
+    <th>Base manager phone</th>
+    <th></th>
+    <th></th>
+    <% if current_user.is_admin? %>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @helibases.each do |helibase| %>
+  <tr class="odd">
+    <td><%= link_to helibase.crew.name, helibase_for_crew_path(helibase.crew_id) %></td>
+    <td><%= helibase.city %></td>
+    <td><%= helibase.state %></td>
+    <td><%= helibase.main_phone %></td>
+    <td><%= helibase.base_manager_name %></td>
+    <td><%= helibase.base_manager_phone %></td>
+    <td><%= link_to 'Show', helibase %></td>
+    <td><%= link_to 'Edit', helibase_for_crew_path(helibase.crew_id) if is_editable_by_current_user?(helibase) %></td>
+    <% if current_user.is_admin? %>
+    <td><%= link_to 'Destroy', helibase, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+| <%= link_to "Home", crew_path(current_user.crew_id) %> |
+<%= link_to 'New Helibase', new_helibase_path if current_user.is_admin? %>

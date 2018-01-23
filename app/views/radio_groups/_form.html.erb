@@ -1,0 +1,33 @@
+<%= form_for(@radio_group) do |f| %>
+  <% if @radio_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@radio_group.errors.count, "error") %> prohibited this radio_group from being saved:</h2>
+
+      <ul>
+      <% @radio_group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :group_number %><br />
+    <%= f.text_field :group_number %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :dispatch_center_id %><br />
+    <%= f.collection_select :dispatch_center_id, @dispatch_centers, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Crew Assigned" %><br />
+    <%= f.collection_select :crew_id, @crews, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table style="border:2px solid #555555; margin: 0 auto 0 auto;">
+    <tr><td colspan="3">Create a New Account</td></tr>
+    <tr><td>Username</td><td>:</td><td><%= f.text_field :username %></td></tr>
+    <tr><td>Password</td><td>:</td><td><%= f.password_field :password %></td></tr>
+    <tr><td>Account Type</td><td>:</td><td><%= select("user", "account_type", options_for_select(Authorizations::ACCOUNT_TYPES)) %></td></tr>
+    <tr><td>Crew</td><td>:</td><td><%= select("user", "crew_id", Crew.find(:all,:order => :name).collect {|c| [c.name,c.id] }) %></td></tr>
+    <tr><td colspan="3"><hr /></td></tr>
+    <tr><td colspan="2"></td><td><%= f.submit %></td></tr>
+  </table>
+<% end %>

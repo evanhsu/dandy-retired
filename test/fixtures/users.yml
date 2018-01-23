@@ -1,0 +1,52 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+src:
+  username: src
+  encrypted_password: 53b7fc3545d4c1b77b6e6bdad1e45bb85273e468
+  salt: f6535a2daa0672139faf7267a8232356c7e562f6
+  account_type: user
+  crew_id: 1
+
+cor:
+  username: cor
+  encrypted_password: 108ef64303127671e310e7d56a98e09eac02c907
+  salt: 492bfe0c16474c1f34ff2b3c9f72d1b79edb15d8
+  account_type: user
+  crew_id: 2
+
+mrc:
+  username: mrc
+  encrypted_password: 198c0a526d0b876d638282d56000a2a20ed87ed0
+  salt: fc837f5f4eac4c46284bb042097ad985b09dbdc0
+  account_type: user
+  crew_id: 3
+
+wvr:
+  username: wvr
+  encrypted_password: 861a04bdc2b992a3eb457b2fab7bed3ad8e40454
+  salt: 3bd9495ac1ff27ac867f553a40bafe7df8745b30
+  account_type: user
+  crew_id: 4
+
+ssrc:
+  username: ssrc
+  encrypted_password: 03b10e62bc0dd10375d429f92e46787705e4168f
+  salt: fad6d49826236da3fb6033f6513121df1128fec2
+  account_type: user
+  crew_id: 5
+
+frb:
+  username: frb
+  encrypted_password: 5ac938dbb40d19a41da8c872e671537ca45ff539
+  salt: 7bcc15cc2f7d696bef6bcc2becb4d2c3f7f3a409
+  account_type: user
+  crew_id: 6
+  
+evanhsu:
+  username: evanhsu
+  encrypted_password: acfc6c6d9cbcf590cbc8e8e5f124d2de6777cc7b
+  salt: 0cabf06c4888c36cb8c2d0a3237147c16b5eeb38
+  account_type: admin
+  crew_id: 1
+
+

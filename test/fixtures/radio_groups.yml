@@ -1,0 +1,183 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Deschutes NF
+  dispatch_center_id: 2
+  group_number: 1
+  crew_id: 2
+
+two:
+  id: 2
+  name: Ochoco NF
+  dispatch_center_id: 2
+  group_number: 2
+  crew_id: 2
+
+three:
+  id: 3
+  name: Prineville BLM
+  dispatch_center_id: 2
+  group_number: 3
+  crew_id: 2
+
+four:
+  id: 4
+  name: Malheur NF
+  dispatch_center_id: 1
+  group_number: 4
+  crew_id: 3
+
+five:
+  id: 5
+  name: SE Ochoco & S Malheur NF
+  dispatch_center_id: 1
+  group_number: 5
+  crew_id: 3
+
+six:
+  id: 6
+  name: Mt Hood NF
+  dispatch_center_id: 1
+  group_number: 6
+  crew_id: 6
+
+seven:
+  id: 7
+  name: Umatilla NF
+  dispatch_center_id: 1
+  group_number: 7
+  crew_id: 6
+
+eight:
+  id: 8
+  name: Umpqua NF
+  dispatch_center_id: 1
+  group_number: 8
+  crew_id: 1
+
+nine:
+  id: 9
+  name: Wallowa-Whitman NF
+  dispatch_center_id: 1
+  group_number: 9
+  crew_id: 5
+
+ten:
+  id: 10
+  name: Rogue River NF
+  dispatch_center_id: 1
+  group_number: 10
+  crew_id: 1
+
+eleven:
+  id: 11
+  name: Siskiyou NF
+  dispatch_center_id: 1
+  group_number: 11
+  crew_id: 1
+
+twelve:
+  id: 12
+  name: Fremont NF & Lakeview
+  dispatch_center_id: 1
+  group_number: 12
+  crew_id: 6
+
+thirteen:
+  id: 13
+  name: Willamette NF
+  dispatch_center_id: 1
+  group_number: 13
+  crew_id: 2
+
+fourteen:
+  id: 14
+  name: Winema NF & Crater Lake
+  dispatch_center_id: 1
+  group_number: 14
+  crew_id: 1
+
+fifteen:
+  id: 15
+  name: Weather Radio
+  dispatch_center_id: 1
+  group_number: 15
+  crew_id: 1
+
+sixteen:
+  id: 16
+  name: Wenatchee NF (Yakima River)
+  dispatch_center_id: 1
+  group_number: 16
+  crew_id: 4
+
+seventeen:
+  id: 17
+  name: Wenatchee NF (Wenatchee River)
+  dispatch_center_id: 1
+  group_number: 17
+  crew_id: 4
+
+eighteen:
+  id: 18
+  name: Columbia River
+  dispatch_center_id: 1
+  group_number: 18
+  crew_id: 4
+
+nineteen:
+  id: 19
+  name: Okanagon NF Methow Valley
+  dispatch_center_id: 1
+  group_number: 19
+  crew_id: 4
+
+twenty:
+  id: 20
+  name: Okanogan NF Tonasket RD
+  dispatch_center_id: 1
+  group_number: 20
+  crew_id: 4
+
+twentyone:
+  id: 21
+  name: Colville NF
+  dispatch_center_id: 1
+  group_number: 21
+  crew_id: 4
+
+twentytwo:
+  id: 22
+  name: Medford BLM
+  dispatch_center_id: 1
+  group_number: 22
+  crew_id: 1
+
+twentythree:
+  id: 23
+  name: ODF/BLM Malheur
+  dispatch_center_id: 1
+  group_number: 23
+  crew_id: 3
+
+twentyfour:
+  id: 24
+  name: Vale BLM
+  dispatch_center_id: 1
+  group_number: 24
+  crew_id: 3
+
+twentyfive:
+  id: 25
+  name: Mt. Baker Snoqualmie NF
+  dispatch_center_id: 1
+  group_number: 25
+  crew_id: 5
+
+twentysix:
+  id: 26
+  name: Gifford Pinchot NF
+  dispatch_center_id: 1
+  group_number: Optional 1
+  crew_id: 5

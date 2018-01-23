@@ -1,0 +1,102 @@
+<% total_hraps = 0 %>
+
+<div style="width: 200px; background:none; display:inline;">
+  <%= image_tag "title.png" %>
+</div>
+<div style="width: 500px; text-align:center; background:none; display:inline;">
+  <%= flash[:notice] %>
+</div>
+
+<table class="staffing_level_table">
+  <tr style="border:2px solid #555555; background-color: #dddddd;">
+    <th style="text-align: center; width: 150px;">Crew Info</th>
+    <th style="border-left: 1px dashed #555555; width:40px; text-align: center;">HRAP Surplus</th>
+    <th style="width:150px; text-align: center;">Resource ID<br />[Contract End Date]</th>
+    <th style="width:80px;">Location</th>
+    <!--<th style="width:75px;">Status</th>-->
+    <th style="width:auto;">Notes</th>
+    <th style="width:200px;">Training</th>
+    <th style="width: 100px;">Updated</th>
+  </tr>
+  <% @staffing_levels.each do |staffing_level| %>
+
+  <% rows = [] %>
+  <% (1..6).each do |r| %>
+    <% rows.push(r) unless staffing_level.send("resource_"+r.to_s+"_name").blank? %>
+  <% end %>
+
+  <% rows.each do |r| %>
+  <tr  <%= "class=attention1" if (Time.now - staffing_level.created_at)/3600 > 18 %>>
+    <% if r == rows[0] %>
+      <td rowspan="<%= rows.length %>" class="last_row_in_group" style="text-align: left; vertical-align: top;">
+        <span style="font-weight: bold;"><%= staffing_level.crew.name %></span><br />
+        <% unless staffing_level.crew.helibase.main_phone.blank? %>
+          <%= staffing_level.crew.helibase.main_phone %> [phone]
+        <% end %>
+        <% unless staffing_level.crew.helibase.fax.blank? %>
+          <%= raw('<br />') unless staffing_level.crew.helibase.main_phone.blank? %>
+          <%= staffing_level.crew.helibase.fax %> [fax]
+        <% end %>
+        <% if current_user && current_user.crew == staffing_level.crew %>
+          <br /><%= link_to "Edit Crew Info", helibase_for_crew_path(current_user.crew) %>
+        <% end %>
+      </td>
+    <% end %>
+    <td style="border-left: 1px dashed #555555; text-align: center;"<%= " class=last_row_in_group" if r == rows.last %>>
+      <%= staffing_level.send("resource_"+r.to_s+"_hrap_surplus") %>
+      <% total_hraps += staffing_level.send("resource_"+r.to_s+"_hrap_surplus").to_i %>
+    </td>
+    <td<%= " class=last_row_in_group" if r == rows.last %> style="text-align:left;">
+          <%= staffing_level.send("resource_"+r.to_s+"_name") %>
+          (<%= staffing_level.send("resource_"+r.to_s+"_detail") %>)<br />
+          <%  if(!staffing_level.send("resource_"+r.to_s+"_contract_end_date").blank?) %>
+            [<%= staffing_level.send("resource_"+r.to_s+"_contract_end_date") %>]
+          <% end %>
+    </td>
+    <td<%= " class=last_row_in_group" if r == rows.last %>>
+          <%= staffing_level.send("resource_"+r.to_s+"_location") %>
+    </td>
+    <!--<td<%= " class=last_row_in_group" if r == rows.last %>><%= staffing_level.send("resource_"+r.to_s+"_status") %></td>-->
+    <td<%= " class=last_row_in_group" if r == rows.last %>>
+          <%= staffing_level.send("resource_"+r.to_s+"_comment") %>
+    </td>
+    <% if r == rows[0] %>
+      <td rowspan="<%= rows.length %>" class="last_row_in_group" style="border-left: 1px dashed #888888;">
+        <% priority_label = 0.to_i %>
+        <% staffing_level.crew.training_priorities.where("name != '' && available = 1").order(:priority).each do |t| %>
+          <%= (priority_label += 1).to_s + ") " + t.name + ": " + t.qualification %><%= raw("<br />\n") %>
+        <% end %>
+
+      </td>
+      <td rowspan="<%= rows.length %>" class="last_row_in_group" style="border-left: 1px dashed #888888;"><%= staffing_level.created_at.in_time_zone(@time_zone).strftime("%d-%b-%Y %H:%M %Z") %></td>
+    <% end %>
+  </tr>
+<% end #Loop through the resources for this crew %>
+<% end #Loop through all crews %>
+  <tr style="background-color: #aaaaaa;">
+    <td style="font-weight:bold; text-align: center;">HRAPS Available to Boost</td>
+    <td style=" border-left: 1px dashed #555555;
+                text-align:center;
+                vertical-align: middle;
+                height:6em;
+                font-weight: bold;">
+      <%= total_hraps %></td>
+    <td colspan="5" style="text-align:right;">
+      <%= link_to 'Edit Staffing Info', staffing_for_crew_url("own_crew") %>
+      <% if current_user %>
+        <br />
+        <%= link_to 'Logout', logout_path if current_user %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+
+<br />
+Legend:
+<table class="staffing_level_table">
+  <tr class="attention1">
+    <td style="text-align: center; height: 4em;">
+      Highlighted entries are more than <%= @age_limit_hours %> hours old
+    </td>
+  </tr>
+</table>

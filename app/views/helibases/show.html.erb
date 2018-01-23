@@ -1,0 +1,143 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Crew:</b>
+  <%= @helibase.crew_id %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @helibase.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @helibase.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @helibase.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @helibase.zip %>
+</p>
+
+<p>
+  <b>Main phone:</b>
+  <%= @helibase.main_phone %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @helibase.fax %>
+</p>
+
+<p>
+  <b>Airport identifier:</b>
+  <%= @helibase.airport_identifier %>
+</p>
+
+<p>
+  <b>Elevation:</b>
+  <%= @helibase.elevation %>
+</p>
+
+<p>
+  <b>Lat degrees:</b>
+  <%= @helibase.lat_degrees %>
+</p>
+
+<p>
+  <b>Lat minutes:</b>
+  <%= @helibase.lat_minutes %>
+</p>
+
+<p>
+  <b>Lon degrees:</b>
+  <%= @helibase.lon_degrees %>
+</p>
+
+<p>
+  <b>Lon minutes:</b>
+  <%= @helibase.lon_minutes %>
+</p>
+
+<p>
+  <b>Nearest airport name:</b>
+  <%= @helibase.nearest_airport_name %>
+</p>
+
+<p>
+  <b>Nearest airport identifier:</b>
+  <%= @helibase.nearest_airport_identifier %>
+</p>
+
+<p>
+  <b>Nearest airport elevation:</b>
+  <%= @helibase.nearest_airport_elevation %>
+</p>
+
+<p>
+  <b>Department1 title:</b>
+  <%= @helibase.department1_title %>
+</p>
+
+<p>
+  <b>Department1 contact name:</b>
+  <%= @helibase.department1_contact_name %>
+</p>
+
+<p>
+  <b>Department1 phone:</b>
+  <%= @helibase.department1_phone %>
+</p>
+
+<p>
+  <b>Department2 title:</b>
+  <%= @helibase.department2_title %>
+</p>
+
+<p>
+  <b>Department2 contact name:</b>
+  <%= @helibase.department2_contact_name %>
+</p>
+
+<p>
+  <b>Department2 phone:</b>
+  <%= @helibase.department2_phone %>
+</p>
+
+<p>
+  <b>Department3 title:</b>
+  <%= @helibase.department3_title %>
+</p>
+
+<p>
+  <b>Department3 contact name:</b>
+  <%= @helibase.department3_contact_name %>
+</p>
+
+<p>
+  <b>Department3 phone:</b>
+  <%= @helibase.department3_phone %>
+</p>
+
+<p>
+  <b>Base manager name:</b>
+  <%= @helibase.base_manager_name %>
+</p>
+
+<p>
+  <b>Base manager phone:</b>
+  <%= @helibase.base_manager_phone %>
+</p>
+
+
+| <%= link_to 'Home', crew_path(current_user.crew_id) %> | 
+<% if is_editable_by_current_user?(@helibase) %>
+  <%= link_to 'Edit', helibase_for_crew_path(@helibase) %> |
+<% end %>
+<%= link_to 'List Helibases', helibases_path %> |

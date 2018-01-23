@@ -1,0 +1,9 @@
+<h1>Helibase for <%= @crew.name %></h1>
+<br /><br />
+<div class="notice"><%= flash[:notice] %></div>
+
+<%= render '/helibases/form' %>
+
+| <%= link_to 'Home', crew_path(current_user.crew_id) %> |
+<%= link_to 'List Helibases', helibases_path %> |
+<%= link_to 'View PDF', info_for_crew_path(@crew.id, :format => :pdf) %> |

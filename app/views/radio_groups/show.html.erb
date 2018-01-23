@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Group number:</b>
+  <%= @radio_group.group_number %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @radio_group.name %>
+</p>
+
+<p>
+  <b>Dispatch Center:</b>
+  <%= @dispatch_center.name %>
+</p>
+
+<p>
+  <b>Crew Assigned:</b>
+  <%= @crew.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_radio_group_path(@radio_group) %> |
+<%= link_to 'Back', radio_groups_path %>

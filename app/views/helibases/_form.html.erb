@@ -1,0 +1,166 @@
+<%= form_for(@helibase) do |f| %>
+  <% if @helibase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@helibase.errors.count, "error") %> prohibited this helibase from being saved:</h2>
+
+      <ul>
+      <% @helibase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="form_table">
+  <tr>
+    <th colspan="2"><h2>Affiliation:</h2></th>
+  </tr>
+  <tr>
+    <td><%= f.label "Crew" %></td>
+    <% if @lock_helibase_affiliation %>
+    <td><%= f.collection_select :crew_id, Crew.all, :id, :name, {}, {:disabled => true} %>
+        <%= f.hidden_field :crew_id %></td>
+    <% else %>
+    <td><%= f.collection_select :crew_id, Crew.all, :id, :name %></td>
+    <% end %>
+  </tr>
+  <%= fields_for "crew[]", @crew do |crew_fields| %>
+  <tr>
+    <td>Charge Code</td>
+    <td><%= crew_fields.text_field :charge_code %></td>
+  </tr>
+  <tr>
+    <td>Override</td>
+    <td><%= crew_fields.text_field :override %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <th colspan="2"><h2>Location:</h2></th>
+  </tr>
+  <tr>
+    <td><%= f.label :street %></td>
+    <td><%= f.text_field :street %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :city %></td>
+    <td><%= f.text_field :city %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :state %></td>
+    <td><%= f.text_field :state %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :zip %></td>
+    <td><%= f.text_field :zip %></td>
+  </tr>
+  <tr>
+    <td><br /><%= f.label "Latitude" %><br /><br /><%= f.label "Longitude" %></td>
+    <td>
+      <table>
+        <tr>
+          <tr><td style="padding:0;">&nbsp;</td><td style="font-size:0.7em;padding:0;">Degrees</td><td style="font-size:0.7em;padding:0;">Minutes (decimal)</td></tr>
+          <td>N</td><td><%= f.text_field :lat_degrees, :style => "width:3em" %>&deg;</td>
+          <td><%= f.text_field :lat_minutes, :style => "width:6em" %>'</td>
+        </tr>
+        <tr>
+          <td>W</td><td><%= f.text_field :lon_degrees, :style => "width:3em" %>&deg;</td>
+          <td><%= f.text_field :lon_minutes, :style => "width:6em" %>'</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td><%= f.label "Helibase Elevation" %></td>
+    <td><%= f.text_field :elevation %></td>
+  </tr>
+  <tr>
+    <th colspan="2"><h2>Airport Info:</h2><br />
+      <span style="font-size:0.8em;font-style:italic;font-weight:normal;">Fill out EITHER the 'Helibase airport' OR the 'Nearest Aiport', not both.</span></th>
+  </tr>
+  <tr>
+    <td><%= f.label "Helibase Airport Name" %></td>
+    <td><%= f.text_field :airport_name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Helibase Airport Identifier" %></td>
+    <td><%= f.text_field :airport_identifier %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :nearest_airport_name %></td>
+    <td><%= f.text_field :nearest_airport_name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :nearest_airport_identifier %></td>
+    <td><%= f.text_field :nearest_airport_identifier %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :nearest_airport_elevation %></td>
+    <td><%= f.text_field :nearest_airport_elevation %></td>
+  </tr>
+  <tr>
+    <th colspan="2"><h2>Contact & Organization:</h2><br />
+      <span style="font-size:0.8em;font-style:italic;font-weight:normal;">Any fields that don't apply should be left blank</span></th>
+  </tr>
+  <tr>
+    <td><%= f.label :main_phone %></td>
+    <td><%= f.text_field :main_phone %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :fax %></td>
+    <td><%= f.text_field :fax %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Base Manager's Name" %></td>
+    <td><%= f.text_field :base_manager_name %></td>
+  </tr>
+  <tr>
+    <td><%=  f.label "Base Manager's Cell Phone" %></td>
+    <td><%= f.text_field :base_manager_phone %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department1_title %></td>
+    <td><%= f.text_field :department1_title %><span style="font-size:0.8em;font-style:italic;font-weight:normal;">(i.e. "Assistant")</span></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department1_contact_name %></td>
+    <td><%= f.text_field :department1_contact_name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department1_phone %></td>
+    <td><%= f.text_field :department1_phone %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department2_title %></td>
+    <td><%= f.text_field :department2_title %><span style="font-size:0.8em;font-style:italic;font-weight:normal;">(i.e. "Operations")</span></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department2_contact_name %></td>
+    <td><%= f.text_field :department2_contact_name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department2_phone %></td>
+    <td><%= f.text_field :department2_phone %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department3_title %></td>
+    <td><%= f.text_field :department3_title %><span style="font-size:0.8em;font-style:italic;font-weight:normal;">(i.e. "Equipment")</span></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department3_contact_name %></td>
+    <td><%= f.text_field :department3_contact_name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :department3_phone %></td>
+    <td><%= f.text_field :department3_phone %></td>
+  </tr>
+  <tr>
+    <th colspan="2">Save</th>
+  </tr>
+
+  
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= f.submit %></td>
+  </tr>
+</table>
+<% end %>

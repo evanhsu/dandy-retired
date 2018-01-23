@@ -1,0 +1,70 @@
+<%= form_for(@staffing_level) do |f| %>
+  <% if @staffing_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@staffing_level.errors.count, "error") %> prohibited this update from being saved:</h2>
+
+      <ul>
+      <% @staffing_level.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table>
+  <tr>
+    <th style="width:auto; vertical-align: bottom;">&nbsp;</th>
+    <th style="width:100px;vertical-align: bottom;">Tailnumber<br />or ICS Title</th>
+    <th style="width:100px;vertical-align: bottom;">A/C Model <br />or Contact Name</th>
+    <th style="width:150px;vertical-align: bottom;">Location</th>
+    <th style="width:50px; vertical-align: bottom; text-align: center;">HRAP Surplus</th>
+    <th style="width:auto; vertical-align: bottom;">Notes</th>
+    <th style="width:75px; vertical-align: bottom;">Contract End Date</th>
+  </tr>
+<% (1..6).each do |n| %>
+  <tr>
+    <td style="vertical-align: top; width:20px;">#<%= n %></td>
+    <td style="vertical-align: top;"><%= f.text_field "resource_"+n.to_s+"_name", :style => "width:100%;" %></td>
+    <td style="vertical-align: top;"><%= f.text_field "resource_"+n.to_s+"_detail", :style => "width:100%;" %></td>
+    <td style="vertical-align: top;"><%= f.text_field "resource_"+n.to_s+"_location", :style => "width:100%;" %></td>
+    <td style="vertical-align: top; text-align: center;"><%= f.text_field "resource_"+n.to_s+"_hrap_surplus", :style => "width:25px;" %></td>
+    <td style="vertical-align: top;"><%= f.text_area "resource_"+n.to_s+"_comment", :style => "width:99%; height:2.5em; margin-top:2px;" %></td>
+    <td style="vertical-align: top;"><%= f.text_field "resource_"+n.to_s+"_contract_end_date", :style => "width:100%;" %></td>
+  </tr>
+<% end %>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="6">
+      <h1>Training Needs</h1>
+      <%# f.text_area :training_needs, :style => "width:400px; height:2.5em;" %>
+      <%= f.hidden_field :crew_id, :value => @crew.id %>
+      
+      <div id="training_priority_list_drag_boundary">
+        <table id="training_priority_labels" style="margin:0">
+            <tr>
+              <th style="width:100px">Priority</th>
+              <th style="width:150px">Trainee Name</th>
+              <th style="width:82px">Position</th>
+              <th style="width:65px">Available?</th>
+            </tr>
+        </table>
+
+        <ol id="training_priority_list" class="training_priority_list_sortable" style="width:500px;margin:0;">
+          <% @training_priorities.each do |tp| %>
+              <%= fields_for "training_priority[]", tp do |tp_fields| %>
+                <%= content_tag_for :li, tp, :class => "ui-state-default ui-widget-content" do %>
+                  <%= tp_fields.text_field :name, :style => "width:200px;" %>
+                  <%= tp_fields.text_field :qualification, :style => "width:82px;" %>
+                  <%= tp_fields.check_box :available, :style => "width:65px;" %>
+                  <span style="font-size:0.8em; color:#44aa44;">[grab here to move]</span>
+                <% end %>
+              <% end %>
+          <% end %>
+        </ol><br />
+      </div> <%# End of div#priority_list_drag_boundary %>
+    </td>
+  </tr>
+</table>
+<%= f.submit "Update" %>
+<% end %>

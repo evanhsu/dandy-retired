@@ -1,0 +1,74 @@
+<%= form_for(@dispatch_center) do |f| %>
+  <% if @dispatch_center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dispatch_center.errors.count, "error") %> prohibited this dispatch_center from being saved:</h2>
+
+      <ul>
+      <% @dispatch_center.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="form_table" style="margin-left:10px; width:97%;">
+  <tr>
+    <td style="text-align: right; width:18em;">Full Name:</td>
+    <td><%= f.text_field :name, :style => "width:350px;" %></td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Abbreviation:</td>
+    <td><%= f.text_field :abbreviation %> (i.e. MIC, COC, CWC, JDC, etc)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Callsign:</td>
+    <td>"<%= f.text_field :callsign, :style => "font-style: italic;" %>" (How you would address them on the radio)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Phone #1:</td>
+    <td><%= f.text_field :phone1 %> (Format: 123-456-7890)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Phone #2:</td>
+    <td><%= f.text_field :phone2 %></td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">24-Hour Phone:</td>
+    <td><%= f.text_field :phone24 %></td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Fax:</td>
+    <td><%= f.text_field :fax %></td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Location:</td>
+    <td><%= f.text_field :location %> (City, State)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">USFS Coverage Area:</td>
+    <td><%= f.text_field :fscoverage %> (i.e. Deschutes NF, Ochoco NF)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">BLM Coverage Area:</td>
+    <td><%= f.text_field :blmcoverage %> (i.e. Prineville RD)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Nat'l Park Coverage Area:</td>
+    <td><%= f.text_field :parkcoverage %> (i.e. Crater Lake NP)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right;">Email:</td>
+    <td><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <div class="actions">
+        <%= f.submit "Save", :class => :form_button, :style => "width:100px;" %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+  
+<% end %>

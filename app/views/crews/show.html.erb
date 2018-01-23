@@ -1,0 +1,82 @@
+<h1><%= @crew.name %></h1>
+<hr />
+
+<h2>Crew Info</h2><br />
+<%= form_for @crew do |f| %>
+  <% if @crew.info_complete? %>
+    <span style="font-size:1em;font-weight:bold;color:#559955">[Up-to-date for this year]
+  <% else %>
+    <span style="font-size:1em;font-weight:bold;color:#cc3333">[NOT up-to-date for this year]
+  <% end %>
+
+  <%= f.hidden_field(:info_complete, :value => (@crew.info_complete? ? "0":"1")) %>
+  <%= f.submit @crew.info_complete? ? "Mark as Incomplete":"Mark as Complete", :class => :form_button %>
+  </span>
+<% end %>
+      
+<div style="font-size:0.9em; font-style: italic">
+  Your crew is responsible for entering and verifying the following information.<br />
+  All info will be sent to GPO for publishing as-is. Please make sure it's correct.
+</div>
+<ul>
+  <% if current_user.is_admin? or (current_user.crew_id == @crew.id) %>
+    <li><%= link_to "Crew Name & Abbreviation", edit_crew_path(@crew) %></li>
+  <% end %>
+  <li><%= link_to "Helibase Info", helibase_for_crew_url(@crew) %> <%= link_to "[pdf]", info_for_crew_url(@crew, :format => :pdf) %></li>
+  <li><%= link_to "Crew Roster", crewmembers_for_crew_path(@crew) %> <%= link_to "[pdf]", crewmembers_for_crew_url(@crew, :format => :pdf) %></li>
+  <li>Radio Groups
+    <ul>
+  <% @radio_groups_for_crew.each do |group| %>
+    <li><%= link_to group.group_number.to_s+" - "+group.name, frequencies_for_radio_group_path(group) %>
+        <%= link_to "[pdf]", frequencies_for_radio_group_url(group, :format => :pdf) %></li>
+  <% end %>
+    </ul>
+  </li>
+  <li><%= link_to "Recommended Hotels", hotels_for_crew_url(@crew) %> - (Please only enter hotels with confirmed government rates)</li>
+  <% if @crew.editable_by_user(current_user) %>
+
+  <% end %>
+</ul>
+
+<hr />
+
+<h2>National Info</h2>
+<div style="font-size:0.9em; font-style: italic">
+  You are not responsible for completing the sections below.<br />
+  They are presented here solely to satisfy your curiosity.
+</div>
+<ul>
+  <li><%= link_to "Which crews are up to date?", crews_path %></li>
+  <li><%= link_to "Lodging (All crews)", hotels_url %></li>
+  <li><%= link_to "Dispatch Centers", dispatch_centers_path %> <%= link_to '[pdf]', dispatch_centers_path(:format => :pdf) %></li>
+  <li><%= link_to "Regional Manifest", crewmembers_path %></li>
+  <li>Crew Manifests
+    <ul>
+      <% @crews.each do |c| %>
+      <li><%= link_to c.name, crewmembers_for_crew_path(c.id) %> <%= link_to "[pdf]", crewmembers_for_crew_path(c.id, :format => :pdf) %></li>
+      <% end %>
+    </ul>
+  </li>
+  <li><%= link_to "All Radio Groups", menu_for_radio_groups_path %></li>
+  <% if @is_admin %>
+  <li><%= link_to "User Accounts", users_path %></li>
+  <% end %>
+</ul>
+<hr />
+
+<h2>Static Pages</h2>
+<div style="font-size:0.9em; font-style: italic">
+  These are the pages with content that does not typically
+  change from year to year.
+</div>
+<ul>
+  <% @static_pages.each do |p| %>
+    <li><a href="/static-pages/<%= p %>" target="_new"><%= p %></a></li>
+  <% end %>
+</ul>
+<hr />
+
+<%= (link_to "| Home |", crew_path(current_user.crew_id))+raw("<br /><br />\n") unless @crew.id == current_user.crew_id %>
+<%= link_to "Logout", logout_path, :class => :form_button %>
+
+

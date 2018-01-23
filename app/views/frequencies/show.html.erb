@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Radio group:</b>
+  <%= @frequency.radio_group_id %>
+</p>
+
+<p>
+  <b>Channel:</b>
+  <%= @frequency.channel %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @frequency.name %>
+</p>
+
+<p>
+  <b>Rx:</b>
+  <%= @frequency.rx %>
+</p>
+
+<p>
+  <b>Rx tone:</b>
+  <%= @frequency.rx_tone %>
+</p>
+
+<p>
+  <b>Tx:</b>
+  <%= @frequency.tx %>
+</p>
+
+<p>
+  <b>Tx tone:</b>
+  <%= @frequency.tx_tone %>
+</p>
+
+<p>
+  <b>Band:</b>
+  <%= @frequency.band %>
+</p>
+
+<p>
+  <b>Repeater location:</b>
+  <%= @frequency.repeater_location %>
+</p>
+
+<p>
+  <b>Coverage area:</b>
+  <%= @frequency.coverage_area %>
+</p>
+
+
+<%= link_to 'Edit', edit_frequency_path(@frequency) %> |
+<%= link_to 'Back', frequencies_path %>

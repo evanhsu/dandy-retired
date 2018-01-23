@@ -1,0 +1,13 @@
+<% i = 0 %>
+<div class="demo">
+
+<ul id="rotation_board" class="rotation_board_sortable">
+  <% @current_board_slots.each do |board_slot| %>
+
+    <li class="ui-state-default ui-widget-content">
+        <div class="ui-widget-header rotation_board_draggable"><%= board_slot %></div>
+    </li>
+    
+  <% end %>
+</ul>
+</div><!-- End demo -->

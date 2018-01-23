@@ -1,0 +1,39 @@
+<h1><%= @crew.name %></h1>
+
+<h1>Manifest</h1>
+<p id="notice"><%= notice %></p>
+<table class="alternating_rows" style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Cell</th>
+    <th>Days Off</th>
+    <th>Rappel Wt</th>
+    <th>Helitack Wt</th>
+    <th>Spotter Wt (with BD bag)</th>
+    <% if current_user.account_type == "admin" or current_user.crew_id == @crew.id %>
+    <th></th>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @crewmembers.each do |crewmember| %>
+    <tr class="<%= cycle('odd', 'evn') %>">
+      <td><%= link_to crewmember.firstname+" "+crewmember.lastname, crewmember %></td>
+      <td><%= crewmember.cellphone %></td>
+      <td><%= crewmember.daysoff %></td>
+      <td style="text-align: center;"><%= crewmember.rappelweight %></td>
+      <td style="text-align: center;"><%= crewmember.helitackweight %></td>
+      <td style="text-align: center;"><%= crewmember.spotterweight %></td>
+      <% if is_editable_by_current_user?(crewmember) %>
+      <td><%= link_to 'Edit', edit_crewmember_path(crewmember) %></td>
+      <td><%= button_to 'Destroy', crewmember, :method => :delete,  :class => :destroy_button, :confirm => 'Are you sure?' %></td>
+      <% end %>
+    </tr>
+<% end %>
+</table>
+<br />
+
+| <%= link_to 'Home', crew_path(current_user.crew_id) %> |
+<%= link_to('New Crewmember', new_crewmember_for_crew_path)+" | " if current_user.account_type == "admin" or current_user.crew_id == @crew.id %>
+<%= link_to "View PDF", crewmembers_for_crew_url(@crew, :format => :pdf) %>
+

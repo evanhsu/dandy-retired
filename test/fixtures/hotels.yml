@@ -1,0 +1,71 @@
+one:
+  crew_id: 1
+  name: Best Western
+  street1: 111 NE Agness Ave.
+  street2:
+  city: Grants Pass
+  state: OR
+  zip: 97526
+  phone: 541-476-1117
+
+
+two:
+  crew_id: 1
+  name: Holiday Inn
+  street1: 105 NE Agness Ave.
+  street2:
+  city: Grants Pass
+  state: OR
+  zip: 97526
+  phone: 541-471-6144
+
+three:
+  crew_id: 1
+  name: Riverside Inn
+  street1: 986 SE 6th St.
+  street2:
+  city: Grants Pass
+  state: OR
+  zip: 97526
+  phone: 541-476-6873
+
+four:
+  crew_id: 1
+  name: La Quinta
+  street1: 243 NE Morgan Ln.
+  street2:
+  city: Grants Pass
+  state: OR
+  zip: 97526
+  phone: 541-472-1808
+
+five:
+  crew_id: 1
+  name: Shilo Inn
+  street1: 1880 NW 6th St.
+  street2:
+  city: Grants Pass
+  state: OR
+  zip: 97526
+  phone: 541-479-8391
+
+six:
+  crew_id: 2
+  name: Best Western
+  street1:
+  street2:
+  city: Prineville
+  state: OR
+  zip: 97754
+  phone: 541-447-8080
+
+seven:
+  crew_id: 2
+  name: Comfort Suites
+  street1:
+  street2:
+  city: Redmond
+  state: OR
+  zip:
+  phone: 541-504-8900
+

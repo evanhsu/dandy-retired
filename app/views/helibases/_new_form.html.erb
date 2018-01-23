@@ -1,0 +1,30 @@
+<%= form_for(@helibase) do |f| %>
+  <% if @helibase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@helibase.errors.count, "error") %> prohibited this helibase from being saved:</h2>
+
+      <ul>
+      <% @helibase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="form_table">
+  <tr>
+    <% if @crews_without_helibases.size > 0 %>
+    <td>Crew:</td>
+    <td><%= f.collection_select :crew_id, @crews_without_helibases, :id, :name %></td>
+    </tr>
+<tr>
+  <td colspan="2"><%= f.submit "Create Helibase" %></td>
+</tr>
+    <% else %>
+    <td colspan="2">There are no crews in need of a helibase (each crew already has one assigned).</td>
+</tr>
+    <% end %>
+
+</table>
+
+<% end %>

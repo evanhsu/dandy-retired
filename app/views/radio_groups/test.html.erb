@@ -1,0 +1,60 @@
+<h2>Group <%= @radio_group.group_number %> - <%= @radio_group.name %></h2>
+<hr />
+<% if @radio_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@radio_group.errors.count, "error") %> prohibited this radio_group from being saved:</h2>
+
+      <ul>
+      <% @radio_group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br />
+
+<%= form_for @radio_group, :url => {:action => 'update_frequencies'} do |f| %>
+
+Which dispatch center manages this radio group?<br />
+  <%= f.collection_select(:dispatch_center_id, @dispatch_centers, :id, :name) %>
+
+<br /><br />
+
+<table id="freq_labels">
+    <tr>
+      <th style="width:36px">CH</th>
+      <th style="width:105px">Full<br />Name</th>
+      <th style="width:82px">Alpha<br />(8 chars)</th>
+      <th style="width:65px">RX</th>
+      <th style="width:50px">RX<br />Tone</th>
+      <th style="width:65px">TX</th>
+      <th style="width:45px">TX<br />Tone</th>
+      <th style="width:55px">Band<br />(N/W)</th>
+      <th style="width:95px">Repeater<br />Location</th>
+      <th style="width:105px">Coverage<br />Area</th>
+    </tr>
+</table>
+<ul id="freqs">
+  <% @frequencies.each do |frequency| %>
+      <%= fields_for "frequency[]", frequency do |frequency_fields| %>
+        <%= content_tag_for :li, frequency do %>
+          <%= frequency_fields.text_field :full_name, :style => "width:100px;" %>
+          <%= frequency_fields.text_field :name, :style => "width:75px;", :onKeyUp => "if(this.value.length > 8) this.value = limitChars(this.value,8).toUpperCase();", :onChange => "this.value = limitChars(this.value,8).toUpperCase();" %>
+          <%= frequency_fields.text_field :rx, :style => "width:60px;" %>
+          <%= frequency_fields.text_field :rx_tone, :style => "width:45px;" %>
+          <%= frequency_fields.text_field :tx, :style => "width:60px;" %>
+          <%= frequency_fields.text_field :tx_tone, :style => "width:45px;" %>
+          <%= frequency_fields.text_field :band, :style => "width:35px;" %>
+          <%= frequency_fields.text_field :repeater_location, :style => "width:100px;" %>
+          <%= frequency_fields.text_field :coverage_area, :style => "width:100px;" %>
+          <span style="font-size:0.8em; color:#44aa44;">[drag]</span>
+        <% end %>
+    <% end %>
+  <% end %>
+  </ul>
+  <%= f.submit "Save Changes", :class => :form_button %>
+<% end %>
+<%= sortable_element("freqs") %>
+
+<br />
+<%= link_to 'Home', crew_path(current_user.crew_id) %> | <%= link_to 'Radio Group Index', radio_groups_path %>

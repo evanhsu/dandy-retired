@@ -1,0 +1,31 @@
+<h1>Radio Groups</h1>
+
+<table class="alternating_rows">
+  <tr>
+    <th>Group</th>
+    <th>Name</th>
+    <th>Dispatch Center</th>
+    <th>Crew Assigned</th>
+    <th></th>
+    <% if current_user.account_type == "admin" %>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @radio_groups.each do |radio_group| %>
+  <tr class="<%= cycle("odd","evn") %>">
+    <td><%= link_to radio_group.group_number, frequencies_for_radio_group_path(radio_group) %></td>
+    <td><%= radio_group.name %></td>
+    <td><%= link_to radio_group.dispatch_center_id.to_s+": "+DispatchCenter.find(radio_group.dispatch_center_id).name, dispatch_center_url(radio_group.dispatch_center_id) %></td>
+    <td><%= link_to radio_group.crew_id.to_s+": "+Crew.find(radio_group.crew_id).name.to_s, crew_url(radio_group.crew_id) %></td>
+    <td><%= link_to 'Edit', edit_radio_group_path(radio_group) %></td>
+    <% if current_user.account_type == "admin" %>
+    <td><%= button_to 'Destroy', {:controller => :radio_groups, :action => :destroy, :id => radio_group.id}, :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Radio group', new_radio_group_path if current_user.account_type == "admin" %>

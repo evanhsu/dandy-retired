@@ -1,0 +1,256 @@
+one:
+  id: 1
+  name: Medford Interagency Communication Center
+  abbreviation: MIC
+  callsign: Medford Interagency Dispatch
+  phone1: 541-618-2510
+  phone2: 
+  phone24: 541-776-7114
+  fax: 541-618-2515
+  location: Medford, OR
+  fscoverage: Rogue-Siskiyou NF
+  blmcoverage: Medford BLM
+  parkcoverage: Oregon Caves Nat'l Monument
+  email: ormic@gmail.com
+
+two:
+  id: 2
+  name: Central Oregon Interagency Dispatch
+  abbreviation: COIDC
+  callsign: Central Oregon Dispatch
+  phone1: 541-416-6800
+  phone2: 
+  phone24: 541-416-6800
+  fax: 541-416-6847
+  location: Prineville, OR
+  fscoverage: Deschutes NF, Ochoco NF
+  blmcoverage: Prineville RD
+  parkcoverage: 
+  email: 
+
+three:
+  id: 3
+  name: Central Washington Interagency Communications Center
+  abbreviation: CWC
+  callsign: Central Washington Dispatch
+  phone1: 509-884-3473
+  phone2:
+  phone24: 509-663-8575
+  fax: 509-663-8575
+  location: Wenatchee, WA
+  fscoverage: Okanogan - Wenatchee NF
+  blmcoverage:
+  parkcoverage:
+  email:
+
+four:
+  id: 4
+  name: Columbia Cascade Communications Center
+  abbreviation: CCC
+  callsign: Columbia Cascade Dispatch
+  phone1: 360-891-5140
+  phone2:
+  phone24: 800-387-6806
+  fax: 360-891-5145
+  location: Vancouver, WA
+  fscoverage: Gifford-Pinchot NF, MT Hood NF, Columbia River Gorge NSA
+  blmcoverage:
+  parkcoverage: Fort Vancouver NHS, Lewis & Clark NHP
+  email:
+
+five:
+  id: 5
+  name: Eugene Interagency Communications Center
+  abbreviation: EIC
+  callsign: Eugene Dispatch
+  phone1: 541-225-6400
+  phone2:
+  phone24: 541-461-5224
+  fax: 541-225-6224
+  location: Springfield, OR
+  fscoverage: Willamette NF
+  blmcoverage: Eugene BLM
+  parkcoverage:
+  email:
+
+nineteen:
+  name: Burns Interagency Communications Center
+  abbreviation: BIC
+  callsign: Burns Dispatch
+  phone1: 541-573-1000
+  phone2:
+  phone24: 541-573-1000
+  fax: 541-573-4410
+  location: Hines, OR
+  fscoverage: Malheur NF (S)
+  blmcoverage: Burns District BLM
+  parkcoverage:
+  email:
+
+six:
+  name: John Day Interagency Dispatch Center
+  abbreviation: JDC
+  callsign: John Day Dispatch
+  phone1: 541-575-1321
+  phone2:
+  phone24: 541-575-1321
+  fax: 541-575-3027
+  location: John Day, OR
+  fscoverage: Malheur NF
+  blmcoverage: 
+  parkcoverage:
+  email:
+
+seven:
+  name: Klamath Falls Interagency Fire Center
+  abbreviation: KFC
+  callsign: Klamath Dispatch
+  phone1: 541-883-6850
+  phone2:
+  phone24: 541-884-0516
+  fax: 541-273-1443
+  location: Klamath Falls, OR
+  fscoverage: Winema NF
+  blmcoverage: 
+  parkcoverage: Crater Lake NP
+  email: orkfc@dms.nwcg.gov
+
+eight:
+  name: Lakeview Interagency Fire Center
+  abbreviation: LFC
+  callsign: Lakeview Dispatch
+  phone1: 541-947-6315
+  phone2:
+  phone24: 541-947-6315
+  fax: 541-947-6317
+  location: Lakeview, OR
+  fscoverage: Fremont NF
+  blmcoverage: Lakeview BLM
+  parkcoverage:
+  email: orlfc@dms.nwcg.gov
+
+nine:
+  name: Northeast Washington Interagency Communications Center
+  abbreviation: NEC
+  callsign: Northeast Dispatch
+  phone1: 509-685-6900
+  phone2:
+  phone24: 509-685-6900
+  fax: 509-685-6918
+  location: Colville, WA
+  fscoverage: Colville, NF
+  blmcoverage: Spokane BLM
+  parkcoverage:
+  email:
+
+ten:
+  name: Blue Mountain Interagency Fire Center
+  abbreviation: BMIFC
+  callsign: Northeast Dispatch
+  phone1: 541-963-7171
+  phone2:
+  phone24: 541-975-5400
+  fax: 541-663-0533
+  location: LaGrande, OR
+  fscoverage: Wallowa Whitman, Umatilla NF
+  blmcoverage: 
+  parkcoverage:
+  email:
+
+eleven:
+  name: Puget Sound Interagency Coordination Center
+  abbreviation: PSC
+  callsign: Puget Sound Dispatch
+  phone1: 425-783-6150
+  phone2:
+  phone24: 800-527-0062
+  fax: 425-783-0239
+  location: Everett, WA
+  fscoverage: Mt Baker - Snoqualmie NF, Olympic NF
+  blmcoverage: 
+  parkcoverage: Klondike Gold Rush NHP, Lake Roosevelt NRA, Mt Rainier NP, Olympic NP, San Juan Island NHP
+  email: 
+
+twelve:
+  name: Siuslaw Dispatch
+  abbreviation: SUF
+  callsign: Siuslaw Dispatch
+  phone1: 541-750-7024
+  phone2:
+  phone24: 541-750-7024
+  fax: 541-750-7027
+  location: Corvallis, OR
+  fscoverage: Siuslaw NF
+  blmcoverage: 
+  parkcoverage:
+  email:
+
+thirteen:
+  name: Umpqua Dispatch
+  abbreviation: UPF
+  callsign: Roseburg Dispatch
+  phone1: 541-957-3325
+  phone2:
+  phone24: 541-957-3325
+  fax: 541-957-3298
+  location: Roseburg, OR
+  fscoverage: Umpqua NF
+  blmcoverage: 
+  parkcoverage:
+  email:
+
+fourteen:
+  name: National Interagency Fire Center
+  abbreviation: NIC
+  callsign: 
+  phone1: 208-387-5400
+  phone2:
+  phone24: 208-387-5400
+  fax: 208-387-5414
+  location: Boise, ID
+  fscoverage: All NF
+  blmcoverage:
+  parkcoverage:
+  email:
+
+fifteen:
+  name: Northwest Coordination Center
+  abbreviation: NWC
+  callsign: 
+  phone1: 503-808-2720
+  phone2:
+  phone24: 503-808-2720
+  fax: 503-808-2750
+  location: Portland, OR
+  fscoverage:
+  blmcoverage:
+  parkcoverage:
+  email:
+
+sixteen:
+  name: ODF - Salem Coordination Center
+  abbreviation: ORS
+  callsign: 
+  phone1: 503-945-7455
+  phone2:
+  phone24: 503-931-5793
+  fax: 503-945-7430
+  location: Salem, OR
+  fscoverage: 
+  blmcoverage: 
+  parkcoverage:
+  email:
+
+seventeen:
+  name: Washington State Department of Natural Resources
+  abbreviation: WAWAS
+  callsign:
+  phone1: 360-902-1300
+  phone2:
+  phone24: 800-562-6010
+  fax: 360-902-1781
+  location: Olympia, WA
+  fscoverage:
+  blmcoverage:
+  parkcoverage:
+  email:

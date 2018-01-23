@@ -1,0 +1,18 @@
+<h1><%= @page_title %></h1>
+<br /><br />
+<% if current_user %>
+  Logged in as <i><%= current_user.username %></i><br />
+  <br />
+  | <%= link_to "Home", crew_url(current_user.crew_id) %> | <%= link_to "Logout", logout_url %> |<br /><br />
+
+<% else %>
+  <%= form_for :user, :url => login_url do |f| %>
+    Username: <br />
+    <%= f.text_field :username, :style => "width: 10em;" %><br />
+    Password: <br />
+    <%= f.password_field :password, :style => "width: 10em;" %><br />
+    <%= f.submit :value => "Login", :style => "width:5em;" %><br />
+    <div class="error_msg"><%= flash[:auth_alert] %></div>
+
+  <% end %>
+<% end %>

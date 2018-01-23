@@ -1,0 +1,177 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  crew_id: 1
+  street: 657 Flaming Rd.
+  city: Grants Pass
+  state: OR
+  zip: 97526
+  main_phone: 541-471-6891
+  fax: 541-471-6887
+  airport_identifier: 3S8
+  elevation: 1126
+  lat_degrees: 42
+  lat_minutes: 30.38
+  lon_degrees: 123
+  lon_minutes: 22.94
+  nearest_airport_name: 
+  nearest_airport_identifier: 
+  nearest_airport_elevation: 
+  department1_title: Assistant
+  department1_contact_name: Tim Lyda
+  department1_phone: 541-761-2676
+  department2_title: 
+  department2_contact_name: 
+  department2_phone: 
+  department3_title: 
+  department3_contact_name: 
+  department3_phone: 
+  base_manager_name: Dan Quinones
+  base_manager_phone: 541-946-3267
+  
+
+two:
+  crew_id: 2
+  street: 4550 Airport Way
+  city: Prineville
+  state: OR
+  zip: 97754
+  main_phone: 541-416-6840
+  fax: 541-416-6837
+  airport_identifier: S39
+  elevation: 3250
+  lat_degrees: 44
+  lat_minutes: 16.74
+  lon_degrees: 120
+  lon_minutes: 54.13
+  nearest_airport_name: 
+  nearest_airport_identifier: 
+  nearest_airport_elevation: 
+  department1_title: Assistant
+  department1_contact_name: Norm Sealing
+  department1_phone: 
+  department2_title: Assistant
+  department2_contact_name: Adam Kahler
+  department2_phone: 
+  department3_title: 
+  department3_contact_name: 
+  department3_phone: 
+  base_manager_name: Amy Kazmier
+  base_manager_phone: 541-280-5444
+
+three:
+  crew_id: 3
+  street:
+  city:
+  state: OR
+  zip:
+  main_phone:
+  fax:
+  airport_identifier: GCD
+  elevation:
+  lat_degrees:
+  lat_minutes:
+  lon_degrees:
+  lon_minutes:
+  nearest_airport_name:
+  nearest_airport_identifier:
+  nearest_airport_elevation:
+  department1_title: Operations
+  department1_contact_name:
+  department1_phone:
+  department2_title: Equipment
+  department2_contact_name:
+  department2_phone:
+  department3_title: Training
+  department3_contact_name:
+  department3_phone:
+  base_manager_name: Jeff Meyerholz
+  base_manager_phone:
+
+four:
+  crew_id: 4
+  street:
+  city:
+  state: WA
+  zip:
+  main_phone:
+  fax:
+  airport_identifier: EAT
+  elevation:
+  lat_degrees:
+  lat_minutes:
+  lon_degrees:
+  lon_minutes:
+  nearest_airport_name:
+  nearest_airport_identifier:
+  nearest_airport_elevation:
+  department1_title: Assistant
+  department1_contact_name:
+  department1_phone:
+  department2_title:
+  department2_contact_name:
+  department2_phone:
+  department3_title:
+  department3_contact_name:
+  department3_phone:
+  base_manager_name: Mike Davis
+  base_manager_phone:
+
+five:
+  crew_id: 5
+  street:
+  city:
+  state: OR
+  zip:
+  main_phone:
+  fax:
+  airport_identifier:
+  elevation:
+  lat_degrees:
+  lat_minutes:
+  lon_degrees:
+  lon_minutes:
+  nearest_airport_name: Enterprise Municipal Airport
+  nearest_airport_identifier: 8S4
+  nearest_airport_elevation:
+  department1_title: Assistant
+  department1_contact_name: Court Fent
+  department1_phone:
+  department2_title:
+  department2_contact_name:
+  department2_phone:
+  department3_title:
+  department3_contact_name:
+  department3_phone:
+  base_manager_name: Grif Williams
+  base_manager_phone:
+
+six:
+  crew_id: 6
+  street:
+  city:
+  state: OR
+  zip:
+  main_phone:
+  fax:
+  airport_identifier:
+  elevation:
+  lat_degrees:
+  lat_minutes:
+  lon_degrees:
+  lon_minutes:
+  nearest_airport_name: LaGrande/Union Co Airport
+  nearest_airport_identifier: LGD
+  nearest_airport_elevation: 2717
+  department1_title: Assistant
+  department1_contact_name: Kane Lester
+  department1_phone:
+  department2_title:
+  department2_contact_name:
+  department2_phone:
+  department3_title:
+  department3_contact_name:
+  department3_phone:
+  base_manager_name: JD Connall
+  base_manager_phone:
+

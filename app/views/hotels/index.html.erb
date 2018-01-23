@@ -1,0 +1,41 @@
+<h1>Listing All Hotels</h1>
+<hr />
+
+<table class="alternating_rows">
+
+<% last_crew_id = "" %>
+<% @hotels.each do |hotel| %>
+  <% if hotel.crew_id != last_crew_id %>
+    <tr colspan="9"><td style="height:2em; vertical-align:bottom;"><h2><%= hotel.crew.name %></h2></td></tr>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Street 1</th>
+      <th>Street 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th></th>
+      <th></th>
+    </tr>
+  <% end %>
+
+  <tr class="odd">
+    <td><a href="<%= hotel.map_link %>" target="_new"><%= hotel.name %></a></td>
+    <td><%= hotel.phone %></td>
+    <td><a href="<%= hotel.map_link %>" target="_new"><%= hotel.street1 %></a></td>
+    <td><%= hotel.street2 %></td>
+    <td><%= hotel.city %></td>
+    <td><%= hotel.state %></td>
+    <td><%= hotel.zip %></td>
+    <td><%= link_to 'Edit', edit_hotel_path(hotel) if current_user.crew_id == hotel.crew_id or current_user.is_admin? %></td>
+    <td><%= button_to 'Destroy', hotel, :confirm => 'Are you sure?', :class => :destroy_button, :method => :delete if current_user.crew_id == hotel.crew_id or current_user.is_admin? %></td>
+  </tr>
+  <% last_crew_id = hotel.crew_id %>
+<% end %>
+</table>
+
+<br />
+
+| <%= link_to " Home ", crew_path(current_user.crew_id) %> |
+<%= link_to 'New Hotel', new_hotel_path %> |

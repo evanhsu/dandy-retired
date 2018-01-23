@@ -1,0 +1,11 @@
+<h2>All Radio Groups</h2>
+
+<table>
+<% @radio_groups.each do |group| %>
+  <tr>
+    <td><%= link_to group.group_number, frequencies_for_radio_group_path(group) %></td>
+    <td><%= link_to group.name, frequencies_for_radio_group_path(group) %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Home', crew_path(current_user.crew_id) %>

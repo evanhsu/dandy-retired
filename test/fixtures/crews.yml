@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Siskiyou Rappel Crew
+  abbreviation: SRC
+
+two:
+  id: 2
+  name: Central Oregon Rappel Crew
+  abbreviation: COR
+
+three:
+  id: 3
+  name: Malheur Rappel Crew
+  abbreviation: MRC
+
+four:
+  id: 4
+  name: Wenatchee Valley Rappellers
+  abbreviation: WVR
+
+five:
+  id: 5
+  name: Sled Springs Rappel Crew
+  abbreviation: SSRC
+
+six:
+  id: 6
+  name: Blue Mountain Rappel Crew
+  abbreviation: BMRC

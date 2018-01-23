@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<table class="form_table">
+  <tr>
+    <td><b>Crew:</b></td>
+    <td><%= @crewmember.crew.name %></td>
+  </tr>
+
+  <tr>
+    <td><b>Name:</b></td>
+    <td><%= @crewmember.firstname+" "+@crewmember.lastname %></td>
+  </tr>
+
+  <tr>
+    <td><b>Cell Phone:</b></td>
+    <td><%= @crewmember.cellphone %></td>
+  </tr>
+
+  <tr>
+    <td><b>Days Off:</b></td>
+    <td><%= @crewmember.daysoff %></td>
+  </tr>
+
+  <tr>
+    <td><b>Rappel Weight:</b></td>
+    <td><%= @crewmember.rappelweight %></td>
+  </tr>
+
+  <tr>
+    <td><b>Helitack Weight:</b></td>
+    <td><%= @crewmember.helitackweight %></td>
+  </tr>
+
+  <tr>
+    <td><b>Spotter Weight:</b></td>
+    <td><%= @crewmember.spotterweight %></td>
+  </tr>
+</table>
+
+<%= link_to 'Back', crewmembers_for_crew_path(@crewmember.crew_id) %> |
+<%= link_to 'Home', crew_path(current_user.crew_id) %> |
+<%= link_to 'Edit', edit_crewmember_path(@crewmember) if is_editable_by_current_user?(@crewmember) %>
+

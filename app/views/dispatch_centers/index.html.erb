@@ -1,0 +1,35 @@
+<h1>Listing All Dispatch Centers</h1>
+<div id="notice"><%= flash[:notice].blank? ? "":raw('<br />')+flash[:notice]+raw('<br /><br />') %></div>
+
+<table class="alternating_rows" style="width:100%">
+  <tr>
+    <th>Abbrev.</th>
+    <th>Name</th>
+    <th>Phone #1</th>
+    <th>Fax</th>
+    <th>Email</th>
+    <th>Location</th>
+    <% if current_user.account_type == "admin" %>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @dispatch_centers.each do |dispatch_center| %>
+  <tr class="<%= cycle('odd','evn') %>">
+    <td><%= link_to dispatch_center.abbreviation, edit_dispatch_center_path(dispatch_center) %></td>
+    <td><%= link_to dispatch_center.name, edit_dispatch_center_path(dispatch_center) %></td>
+    <td><%= dispatch_center.phone1 %></td>
+    <td><%= dispatch_center.fax %></td>
+    <td><%= dispatch_center.email %></td>
+    <td><%= dispatch_center.location %></td>
+    <% if current_user.account_type == "admin" %>
+    <td><%= link_to 'Destroy', dispatch_center, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+| <%= link_to "Home", crew_path(current_user.crew_id) %> |
+<%= link_to 'New Dispatch center', new_dispatch_center_path %> |
+<%= link_to 'View PDF', dispatch_centers_path(:format => :pdf) %> |

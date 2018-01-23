@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+#PATH=/home/elhsu/.gems/bin:/usr/lib/ruby/gems/1.8/bin/:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
+HOME=/home/elhsu/dandy.natrap.com
+
+
+cd /home/elhsu/dandy.natrap.com/
+/home/elhsu/.gems/bin/bundle exec /home/elhsu/.gems/gems/rake-0.9.2.2/bin/rake db:rolling_dump

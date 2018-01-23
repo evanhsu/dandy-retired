@@ -1,0 +1,6 @@
+<h1>New hotel</h1>
+
+<%= render 'form' %>
+
+| <%= link_to " Home ", crew_path(current_user.crew_id) %> |
+<%= link_to 'Back', hotels_for_crew_path(@crew) %> |

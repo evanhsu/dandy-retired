@@ -1,0 +1,48 @@
+<%= form_for(@crewmember) do |f| %>
+  <% if @crewmember.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crewmember.errors.count, "error") %> prohibited this crewmember from being saved:</h2>
+
+      <ul>
+      <% @crewmember.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :crew_id %>
+  </div>
+  <div class="field">
+    <%= f.label "First Name:" %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label "Last Name:" %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label "Cell Phone:"%><br />
+    <%= f.text_field :cellphone %>
+  </div>
+  <div class="field">
+    <%= f.label "Days Off (i.e. 'Sun/Mon')" %><br />
+    <%= f.text_field :daysoff %>
+  </div>
+  <div class="field">
+    <%= f.label "Rappel Weight:" %><br />
+    <%= f.text_field :rappelweight %>
+  </div>
+  <div class="field">
+    <%= f.label "Helitack Weight (No rope, genie, harness or line gear):" %><br />
+    <%= f.text_field :helitackweight %>
+  </div>
+  <div class="field">
+    <%= f.label "Spotter Weight (With BD bag. Leave blank if not a spotter):" %><br />
+    <%= f.text_field :spotterweight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

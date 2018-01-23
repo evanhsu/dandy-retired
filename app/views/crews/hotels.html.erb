@@ -1,0 +1,38 @@
+<h1>Hotels near <%= @crew.name %></h1>
+<hr />
+<div class="notice"><%= flash[:notice] %></div>
+
+<br />
+<table class="alternating_rows">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Street 1</th>
+    <th>Street 2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hotels.each do |hotel| %>
+  <tr class="odd">
+    <td><a href="<%= hotel.map_link %>" target="_new"><%= hotel.name %></a></td>
+    <td><%= hotel.phone %></td>
+    <td><a href="<%= hotel.map_link %>" target="_new"><%= hotel.street1 %></a></td>
+    <td><%= hotel.street2 %></td>
+    <td><%= hotel.city %></td>
+    <td><%= hotel.state %></td>
+    <td><%= hotel.zip %></td>
+    <td><%= link_to 'Edit', edit_hotel_path(hotel) if current_user.crew_id == @crew.id or current_user.is_admin? %></td>
+    <td><%= button_to 'Destroy', hotel, :confirm => 'Are you sure?', :class => :destroy_button, :method => :delete if current_user.crew_id == @crew.id or current_user.is_admin? %></td>
+  </tr>
+<% end %>
+</table>
+A maximum of 10 hotels can be entered.
+<br /><br />
+
+| <%= link_to "Home", crew_path(@crew) %> |
+
+<%= link_to 'New Hotel', new_hotel_path if current_user.crew_id == @crew.id or current_user.is_admin? unless @hotels.count >= 10%>
